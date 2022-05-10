@@ -18,3 +18,13 @@ services:
       - catalogdb
     ports:
       - "8000:80"
+
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - catalog.api
+    ports:
+      - "8010:80"
+
